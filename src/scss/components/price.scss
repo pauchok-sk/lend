@@ -1,0 +1,33 @@
+.price {
+  padding: 60px 0px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 32px;
+    @include tablet {
+      font-size: 24px;
+    }
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+  &__item-title {
+    transform: translateY(-6px);@include mobile {
+      transform: translateY(-2px);
+    }
+  }
+  &__item-line {
+    flex: 1;
+    min-width: 40px;
+    height: 1px;
+    background-color: black;
+  }
+  &__number {
+  }
+}

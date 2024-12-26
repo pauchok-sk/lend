@@ -1,0 +1,100 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0px;
+  z-index: 100;
+  color: white;
+  &__burger-btn {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    z-index: 1000;
+
+    &._active {
+      div {
+        position: absolute;
+        background-color: black;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    @include mobile {
+      @include flex-center;
+      margin-left: auto;
+    }
+    div {
+      width: 30px;
+      height: 2px;
+      background-color: currentColor;
+      transition: transform .2s ease;
+    }
+  }
+  &__nav {
+    @include mobile {
+      position: fixed;
+      inset: 0;
+      background-color: white;
+      z-index: 100;
+      color: black;
+      padding: 20px 0px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease, visibility .4s ease;
+
+      &._open {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__list {
+    @include flex-center;
+    gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    a {
+      position: relative;
+      font-size: 18px;
+      @include hover {
+        &::before {
+          right: 0;
+          left: 0;
+        }
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+      @include mobile {
+        font-size: 20px;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        right: 50%;
+        left: 50%;
+        bottom: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition: left 0.2s ease, right 0.2s ease;
+      }
+    }
+  }
+}

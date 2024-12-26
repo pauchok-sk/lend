@@ -1,0 +1,31 @@
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.btn-main {
+  @include flex-center;
+  cursor: pointer;
+  min-height: 55px;
+  border-radius: 100px;
+  background-color: var(--black);
+  border: 1px solid var(--black);
+  width: 100%;
+
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px; 
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  transition: color .2s ease, background-color .2s ease;
+  @include hover {
+    color: var(--black);
+    background-color: transparent;
+  }
+}

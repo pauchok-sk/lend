@@ -1,0 +1,9 @@
+.promo {
+  &__btn {
+    @include flex-center;
+    padding: 60px 0px;
+    margin: 0 !important;
+    color: white;
+    background-color: black;
+  }
+}
