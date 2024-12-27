@@ -230,6 +230,40 @@ body {
   margin: 0 0 60px 0;
   text-align: center
 }
+.slider-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px
+}
+.slider-nav__btn {
+  width: 120px;
+  height: 25px;
+  transition: opacity .2s ease
+}
+.slider-nav__btn._prev {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.slider-nav__number {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: Montserrat,sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .85px
+}
+.slider-nav__number-line {
+  height: 40px;
+  width: 1px;
+  background-color: currentColor;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg)
+}
+.slider-nav__btn-icon {
+  width: 100%;
+  height: 100%
+}
 .header {
   position: absolute;
   top: 0;
@@ -313,10 +347,15 @@ body {
   object-fit: cover
 }
 .intro__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   position: absolute;
   z-index: 100;
   bottom: 90px;
-  left: 75px
+  left: 75px;
+  right: 75px
 }
 .intro__title {
   font-size: 60px;
@@ -446,6 +485,65 @@ body {
   min-width: 40px;
   height: 1px;
   background-color: #000
+}
+.skills {
+  padding-bottom: 60px
+}
+.skills__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px
+}
+.skills__info {
+  flex: 0 1 360px
+}
+.skills__title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26.4px;
+  letter-spacing: .48px;
+  margin: 0 0 20px 0
+}
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+.skills__item {
+  position: relative;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: .85px;
+  padding-left: 15px
+}
+.skills__item::before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  left: 0;
+  top: 8px
+}
+.skills__slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px
+}
+.skills__slider {
+  max-width: 100%!important;
+  width: 780px!important;
+  height: 520px
+}
+.skills__slider-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 :root {
   --f-spinner-width: 36px;
@@ -2143,6 +2241,7 @@ html.with-fancybox body.hide-scrollbar {
 @media (max-width:1200px) {
   .intro__info {
     left: 30px;
+    right: 30px;
     bottom: 40px
   }
   .intro__title {
@@ -2160,8 +2259,18 @@ html.with-fancybox body.hide-scrollbar {
   .articles__item-title {
     font-size: 28px
   }
+  .skills__slider {
+    width: 555px!important;
+    height: 380px
+  }
 }
 @media (max-width:992px) {
+  .intro__info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+  }
   .intro__title {
     font-size: 44px
   }
@@ -2170,6 +2279,21 @@ html.with-fancybox body.hide-scrollbar {
   }
   .articles__img {
     height: 150px
+  }
+  .skills__container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+  }
+  .skills__info {
+    flex-basis: 100%
+  }
+  .skills__slider-wrapper {
+    width: 100%
+  }
+  .skills__slider {
+    width: 650px!important;
+    height: 430px
   }
 }
 @media (max-width:743px) {
@@ -2210,6 +2334,10 @@ html.with-fancybox body.hide-scrollbar {
   }
   .price__item {
     font-size: 24px
+  }
+  .skills__slider {
+    width: 450px!important;
+    height: 300px
   }
 }
 @media (max-width:670px) {
@@ -2258,6 +2386,7 @@ html.with-fancybox body.hide-scrollbar {
   }
   .intro__info {
     left: 15px;
+    right: 30px;
     bottom: 20px
   }
   .articles__item {
@@ -2273,11 +2402,18 @@ html.with-fancybox body.hide-scrollbar {
     -webkit-transform: translateY(-2px);
     transform: translateY(-2px)
   }
+  .skills__slider {
+    width: 340px!important;
+    height: 250px
+  }
 }
 @media (any-hover:hover) {
   .btn-main:hover {
     color: var(--black);
     background-color: rgba(0,0,0,0)
+  }
+  .slider-nav__btn:hover {
+    opacity: .6
   }
   .header__list a:hover::before {
     right: 0;
@@ -2288,6 +2424,9 @@ html.with-fancybox body.hide-scrollbar {
   .btn-main:active {
     color: var(--black);
     background-color: rgba(0,0,0,0)
+  }
+  .slider-nav__btn:active {
+    opacity: .6
   }
   .header__list a:active::before {
     right: 0;
