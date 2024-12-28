@@ -1,0 +1,27 @@
+.footer {
+  padding: 55px 0px 30px 0px;
+  &__social {
+    @include flex-center;
+    margin-bottom: 20px;
+  }
+  &__social-btn {
+    width: 24px;
+    height: 24px;
+    display: block;
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--red-dark);
+    }
+  }
+  &__social-icon {
+    width: 100%;
+    height: 100%;
+  }
+  &__name {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.85px;
+  }
+}

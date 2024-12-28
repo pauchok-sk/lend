@@ -1,6 +1,7 @@
 .intro {
   position: relative;
   color: white;
+
   &::before {
     position: absolute;
     content: "";
@@ -10,7 +11,10 @@
     z-index: 20;
   }
   &__slider {
-    height: 100vh;
+    height: 100vh; 
+    @include mobile {
+      height: 545px;
+    }
   }
   &__slide-img {
     width: 100%;
